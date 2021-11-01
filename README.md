@@ -29,7 +29,7 @@ The flask app uses both the database and the model to surve a frontend interface
 
 You need python 3.8, and you need to install the following libraries:
 
-pandas, sqlalchemy, pickle, nltk, sklearn, joblib, plotly, and flask
+pandas, numpy, sqlalchemy, pickle, nltk, sklearn, joblib, plotly, and flask
 
 You can install all libraries with the following command while you're in the project folder:
 
