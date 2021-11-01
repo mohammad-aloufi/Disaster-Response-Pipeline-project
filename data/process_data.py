@@ -33,6 +33,13 @@ def clean_data(df):
     df.drop_duplicates(subset='id', keep='first', inplace=True)
     print('Duplicates after cleaning: {}'.format(
         df.duplicated(subset='id', keep='first').sum()))
+
+    #Related column has a problem with having a class other than 0 or 1
+    print(df.related.unique())
+        #We'll replace the 2 values with 1
+    df['related'].replace({2: 1}, inplace=True)
+    #Lets check for uniques again
+    print(df.related.unique())
     return df
 
 
