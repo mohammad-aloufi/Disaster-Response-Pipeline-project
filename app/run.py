@@ -39,12 +39,12 @@ model = joblib.load("../models/model.pkl")
 def index():
     
     # extract data needed for visuals
-    # Data extraction for visuals
     related_counts = df.groupby('related').count()['message']
     related_names = list(related_counts.index)
-    
+    hospitals_counts = df.groupby('hospitals').count()['message']
+    hospitals_names = list(hospitals_counts.index)
+
     # create visuals
-    # Message relatability graph
     graphs = [
         {
             'data': [
@@ -61,6 +61,24 @@ def index():
                 },
                 'xaxis': {
                     'title': "Related"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=hospitals_names,
+                    y=hospitals_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of messages that are related to hospitals',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Hospitals"
                 }
             }
         }
