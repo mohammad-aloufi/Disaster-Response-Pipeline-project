@@ -1,0 +1,8 @@
+pandas
+sqlalchemy
+pickle
+nltk
+sklearn
+joblib
+plotly
+flask
